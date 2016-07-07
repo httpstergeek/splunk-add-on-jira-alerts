@@ -54,6 +54,30 @@ TEMPLATE = '''
             </span>
         </div>
     </div>
+    <div class="control-group">
+        <label class="control-label" for="include">Include</label>
+        <div class="controls">
+            <div class="column-group" style="position:relative;overflow:hidden;float:left">
+                <label class="checkbox" for="include_item">
+                    <input type="checkbox" name="action.jira.param.include_item" value="link_to_alert">Link to Alert
+                </label>
+                <label class="checkbox" for="include_item">
+                    <input type="checkbox" name="action.jira.param.include_item" value="search_string">Search String
+                </label>
+            </div>
+            <div class="column-group" style="position:relative;overflow:hidden;float:left;padding-left:5%">
+                <label class="checkbox" for="include_item">
+                    <input type="checkbox" name="action.jira.param.include_item" value="link_to_results">Link to Results
+                </label>
+                <label class="checkbox" for="include_item">
+                    <input type="checkbox" name="action.jira.param.include_item" value="search_string">Inline
+                </label>
+            </div>
+            <span class="help-block">
+                Appends additional information to description field.
+            </span>
+        </div>
+    </div>
 </form>
 '''
 
