@@ -64,6 +64,7 @@ class TestJiraPayload(TestJiraClass):
     def test_owner(self):
         self.assertEqual(self.payload.get('owner'),"system")
 
+    # TODO build better test for reading file
     def test_results_file(self):
         self.assertEqual(self.payload.get('results_file'),"")
 

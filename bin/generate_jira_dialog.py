@@ -58,19 +58,16 @@ TEMPLATE = '''
         <label class="control-label" for="include">Include</label>
         <div class="controls">
             <div class="column-group" style="position:relative;overflow:hidden;float:left">
-                <label class="checkbox" for="include_item">
-                    <input type="checkbox" name="action.jira.param.include_item" value="link_to_alert">Link to Alert
-                </label>
-                <label class="checkbox" for="include_item">
-                    <input type="checkbox" name="action.jira.param.include_item" value="search_string">Search String
+                <label class="checkbox" for="search_string">
+                    <input type="checkbox" name="action.jira.param.search_name" value="search_name">Search Name
                 </label>
             </div>
             <div class="column-group" style="position:relative;overflow:hidden;float:left;padding-left:5%">
-                <label class="checkbox" for="include_item">
-                    <input type="checkbox" name="action.jira.param.include_item" value="link_to_results">Link to Results
+                <label class="checkbox" for="link_to_results">
+                    <input type="checkbox" name="action.jira.param.link_to_results" value="link_to_results">Link to Results
                 </label>
-                <label class="checkbox" for="include_item">
-                    <input type="checkbox" name="action.jira.param.include_item" value="search_string">Inline
+                <label class="checkbox" for="inline">
+                    <input type="checkbox" name="action.jira.param.inline" value="inline">Inline
                 </label>
             </div>
             <span class="help-block">
