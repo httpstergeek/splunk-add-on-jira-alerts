@@ -61,9 +61,6 @@ class TestJiraPayload(TestJiraClass):
     def test_app(self):
         self.assertEqual(self.payload.get('app'),"pas_ref_app")
 
-    def test_inline(self):
-        self.assertEqual(self.payload.get('inline'),"")
-
     def test_owner(self):
         self.assertEqual(self.payload.get('owner'),"system")
 
@@ -72,9 +69,6 @@ class TestJiraPayload(TestJiraClass):
 
     def test_results_link(self):
         self.assertEqual(self.payload.get('results_link'),"")
-
-    def test_search(self):
-        self.assertEqual(self.payload.get('search'),"")
 
     def test_server_host(self):
         self.assertNotEqual(self.payload.get('server_host'),None)
