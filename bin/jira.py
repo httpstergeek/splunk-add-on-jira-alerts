@@ -16,14 +16,19 @@ def send_message(payload):
 
     # Reads results gz file
     if inline:
-        with gzip.open(payload.get('results_file')) as f:
-            csvfile = "%s" % f.read()
-            csvfile = csvfile.splitlines()
-            rdr = csv.reader(csvfile)
-            inline = "results:\n"
-            for r in rdr:
-                rlen = len(r)
-                inline += ",".join(r[:rlen-2]) + "\n"
+        try:
+            # attempt to open results file
+            with gzip.open(payload.get('results_file')) as f:
+                csvfile = "%s" % f.read()
+                csvfile = csvfile.splitlines()
+                rdr = csv.reader(csvfile)
+                inline = "results:\n"
+                for r in rdr:
+                    rlen = len(r)
+                    inline += ",".join(r[:rlen-2]) + "\n"
+        except Exception, e:
+            print >> sys.stderr, "ERROR Error reading results file: %s"
+            inline = ""
 
     description = '\n\n'.join([description, inline, search, link])
     ISSUE_REST_PATH = "/rest/api/latest/issue"
