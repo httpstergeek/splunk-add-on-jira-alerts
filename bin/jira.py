@@ -27,7 +27,6 @@ def send_message(payload):
                 inline += ",".join(r[:rlen-2]) + "\n"
 
     description = '\n\n'.join([description, inline, search, link])
-
     ISSUE_REST_PATH = "/rest/api/latest/issue"
     url = config.get('jira_url')
     jira_url = url + ISSUE_REST_PATH
