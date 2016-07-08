@@ -9,14 +9,13 @@ from jira_helpers import get_jira_password
 # and attempts to send to the specified endpoint
 def send_message(payload):
     config = payload.get('configuration')
-    inline = config.get('inline')
+    inline = config.get('jira_inline')
     description = config.get('description')
-    search = "saved search name:\n%s" % (payload.get('search_name')) if config.get('search_name') else ""
-    link = "results link:\n%s" % (payload.get('results_link')) if config.get('link_to_results') else ""
+    search = "saved search name:\n%s" % (payload.get('search_name')) if config.get('jira_search_name') else ""
+    link = "results link:\n%s" % (payload.get('results_link')) if config.get('jira_link_to_results') else ""
 
     # Reads results gz file
     if inline:
-        inline = ""
         with gzip.open(payload.get('results_file')) as f:
             csvfile = "%s" % f.read()
             csvfile = csvfile.splitlines()

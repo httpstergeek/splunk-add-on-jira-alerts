@@ -55,21 +55,17 @@ TEMPLATE = '''
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="include">Include</label>
+        <label class="control-label">Include</label>
         <div class="controls">
-            <div class="column-group" style="position:relative;overflow:hidden;float:left">
-                <label class="checkbox" for="search_string">
-                    <input type="checkbox" name="action.jira.param.search_name" value="search_name">Search Name
-                </label>
-            </div>
-            <div class="column-group" style="position:relative;overflow:hidden;float:left;padding-left:5%">
-                <label class="checkbox" for="link_to_results">
-                    <input type="checkbox" name="action.jira.param.link_to_results" value="link_to_results">Link to Results
-                </label>
-                <label class="checkbox" for="inline">
-                    <input type="checkbox" name="action.jira.param.inline" value="inline">Inline
-                </label>
-            </div>
+            <label class="checkbox" for="jira_search_name">
+                <input type="checkbox" name="action.jira.param.jira_search_name" id="jira_search_name" value="1" />Search Name
+            </label>
+            <label class="checkbox" for="jira_link_to_results">
+               <input type="checkbox" name="action.jira.param.jira_link_to_results" id="jira_link_to_results" value="1" />Link to Results
+            </label>
+            <label class="checkbox" for="jira_inline">
+               <input type="checkbox" name="action.jira.param.jira_inline" id="jira_inline" value="1" />Inline Results
+            </label>
             <span class="help-block">
                 Appends additional information to description field.
             </span>
